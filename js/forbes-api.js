@@ -2,10 +2,12 @@ const url = `https://www.forbes.com/forbesapi/person/rtb/0/-estWorthPrev/true.js
 const billionaireContainer = document.getElementById('billionaire-container');
 
 
-fetch(url)
+function addItemToIndex(){
+  fetch(url)
   .then(res => res.json())
   .then(data => displayItems(data.personList.personsLists));
-
+  
+}
 
 function displayItems(ara) {
   for (const i of ara) {
@@ -15,3 +17,6 @@ function displayItems(ara) {
     // console.log(`${i.rank} => ${i.person.name}`);
   }
 }
+
+
+addItemToIndex();
