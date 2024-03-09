@@ -17,7 +17,7 @@ function displayItems(ara) {
   for (;i<maxCart;i++) {
     billionaireContainer.innerHTML += `
     <div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src="${(ara[i].imageExists)? ara[i].squareImage : 'img/img placeholder/'+ara[i].person.name[0]+'.jpeg'}" alt="${ara[i].person.name}" class="max-h-[384px]"></figure>
+    <figure><img src="${(ara[i].imageExists)? ara[i].squareImage : 'img/img-placeholder/'+ara[i].person.name[0]+'.jpeg'}" alt="${ara[i].person.name}" class="max-h-[384px]"></figure>
     <div class="card-body">
       <h2 class="card-title">${ara[i].person.name}</h2>
       <p>Rank: ${ara[i].rank+1}</p>
