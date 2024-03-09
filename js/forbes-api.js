@@ -1,5 +1,5 @@
 // const originalUrl = `https://www.forbes.com/forbesapi/person/rtb/0/-estWorthPrev/true.json`;
-const url = `https://raw.githubusercontent.com/kaziMuntasirRahman/forbes-data/main/forbes-data.json`;
+const url = `https://raw.githubusercontent.com/kaziMuntasirRahman/f-data/main/forbes-data.json`;
 const billionaireContainer = document.getElementById('billionaire-container');
 
 
