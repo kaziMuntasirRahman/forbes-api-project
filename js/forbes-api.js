@@ -15,7 +15,7 @@ function displayItems(ara) {
   for (const obj of ara) {
     billionaireContainer.innerHTML += `
     <div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src="${(obj.imageExists)? obj.squareImage : obj.person.name[0]+'.jpeg'}" alt="${obj.person.name}" /></figure>
+    <figure><img src="${(obj.imageExists)? obj.squareImage : 'img/img placeholder/'+obj.person.name[0]+'.jpeg'}" alt="${obj.person.name}" class="max-h-[384px]"></figure>
     <div class="card-body">
       <h2 class="card-title">${obj.person.name}</h2>
       <p>Rank: ${obj.rank+1}</p>
