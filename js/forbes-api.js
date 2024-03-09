@@ -10,28 +10,30 @@ function addItemToIndex() {
     .then(json => displayItems(json.personList.personsLists))
 }
 
+let maxCart = 100;
+let i = 0;
+
 function displayItems(ara) {
-  let i = 0;
-  for (const obj of ara) {
+  for (;i<maxCart;i++) {
     billionaireContainer.innerHTML += `
     <div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src="${(obj.imageExists)? obj.squareImage : 'img/img placeholder/'+obj.person.name[0]+'.jpeg'}" alt="${obj.person.name}" class="max-h-[384px]"></figure>
+    <figure><img src="${(ara[i].imageExists)? ara[i].squareImage : 'img/img placeholder/'+ara[i].person.name[0]+'.jpeg'}" alt="${ara[i].person.name}" class="max-h-[384px]"></figure>
     <div class="card-body">
-      <h2 class="card-title">${obj.person.name}</h2>
-      <p>Rank: ${obj.rank+1}</p>
+      <h2 class="card-title">${ara[i].person.name}</h2>
+      <p>Rank: ${ara[i].rank+1}</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">$${obj.finalWorth} M</button>
+          <button class="btn btn-primary">$${ara[i].finalWorth} M</button>
         </div>
       </div>
     </div>
     `;
-    i++;
-    if(i===100)
-      break;
   }
 }
 
-
+function loadMore(){
+  maxCart = maxCart+50;
+  addItemToIndex();
+}
 
 addItemToIndex();
 
