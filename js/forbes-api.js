@@ -1,3 +1,4 @@
+// const originalUrl = `https://www.forbes.com/forbesapi/person/rtb/0/-estWorthPrev/true.json`;
 const url = `https://raw.githubusercontent.com/kaziMuntasirRahman/forbes-data/main/forbes-data.json`;
 const billionaireContainer = document.getElementById('billionaire-container');
 
@@ -17,9 +18,9 @@ function displayItems(ara) {
     <figure><img src="${obj.person.squareImage}" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="card-title">${obj.person.name}</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <p>Rank: ${obj.rank+1}</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">$${obj.finalWorth} B</button>
+          <button class="btn btn-primary">$${obj.finalWorth} M</button>
         </div>
       </div>
     </div>
