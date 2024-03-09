@@ -22,7 +22,7 @@ function displayItems(ara) {
       <h2 class="card-title">${ara[i].person.name}</h2>
       <p>Rank: ${ara[i].rank+1}</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">$${ara[i].finalWorth} M</button>
+        <button class="btn btn-primary">$${ara[i].finalWorth} M</button>
         </div>
       </div>
     </div>
@@ -31,6 +31,7 @@ function displayItems(ara) {
 }
 
 function loadMore(){
+  billionaireContainer.innerHTML = '';
   maxCart = maxCart+50;
   addItemToIndex();
 }
