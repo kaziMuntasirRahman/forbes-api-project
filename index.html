@@ -11,23 +11,23 @@
 
 <body>
   <header class="">
-    <h1 class="text-5xl w-full text-center my-6"><a href="https://kazimuntasirrahman.github.io/forbes-api-project/"
-        target="_blank">Forbes
-      </a></h1>
+    <h1 class="text-5xl w-full text-center my-6">
+      <a href="https://kazimuntasirrahman.github.io/forbes-api-project/" target="_blank">Forbes</a>
+    </h1>
     <h1 class="text-3xl w-full text-center my-10">Forbes Billionaire List</h1>
   </header>
 
-  <main>
+  <main class="flex flex-col ">
+    <!-- load more button -->
+    <button onclick="loadMore()" class="btn btn-active btn-accent btn-wide mb-10 mx-auto">See More</button>
 
     <!-- billionaire container -->
-    <ul id="billionaire-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-y-5">
-      
+    <ul id="billionaire-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-y-5">
+
     </ul>
-    
+
     <!-- load more button -->
-    <div class="flex justify-center">
-      <button onclick="loadMore()" class="btn btn-active btn-accent btn-wide my-10">See More</button>
-    </div>
+    <button onclick="loadMore()" class="btn btn-active btn-accent btn-wide my-10 mx-auto">See More</button>
   </main>
 
 

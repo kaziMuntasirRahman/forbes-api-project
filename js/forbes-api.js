@@ -1,41 +1,49 @@
 // const originalUrl = `https://www.forbes.com/forbesapi/person/rtb/0/-estWorthPrev/true.json`;
-const url = `https://raw.githubusercontent.com/kaziMuntasirRahman/f-data/main/forbes-data.json`;
-const billionaireContainer = document.getElementById('billionaire-container');
+const url = `https://raw.githubusercontent.com/kaziMuntasirRahman/f-data/main/forbes-data.json`
+const billionaireContainer = document.getElementById('billionaire-container')
 
-
-
-function addItemToIndex() {
+function addItemToIndex () {
   fetch(url)
     .then(response => response.json())
-    .then(json => displayItems(json.personList.personsLists))
+    .then(json => {
+      console.log(maxCart)
+      console.log(json.personList.personsLists.slice(0, maxCart))
+      displayItems(json.personList.personsLists.slice(0, maxCart))
+    })
 }
 
-let maxCart = 100;
-let i = 0;
+let maxCart = 100
+let i = 0
 
-function displayItems(ara) {
-  for (;i<maxCart;i++) {
+function displayItems (ara) {
+  for (; i < maxCart; i++) {
     billionaireContainer.innerHTML += `
     <div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src="${(ara[i].imageExists)? ara[i].squareImage : ('img/img-placeholder/'+ara[i].person.name[0].toLowerCase()+'.jpeg')}" alt="${ara[i].person.name}" class="max-h-[384px]"></figure>
+    <figure>
+    <img src="${ ara[i].squareImage}"
+        alt="${ara[i].person.name}" class="max-h-[384px]">
+    </figure>
     <div class="card-body">
       <h2 class="card-title">${ara[i].person.name}</h2>
-      <p>Rank: #${ara[i].rank+1}</p>
-      <p>Country of Citizen Ship: <span class='font-bold'>${ara[i].countryOfCitizenship}<span></p>
+      <p>Rank: #${ara[i].rank + 1}</p>
+      <p>Country of Citizen Ship: <span class='font-bold'>${
+        ara[i].countryOfCitizenship
+      }<span></p>
         <div class="card-actions justify-end">
         <button class="btn btn-primary">$${ara[i].finalWorth} M</button>
         </div>
       </div>
     </div>
-    `;
+    `
   }
 }
 
-function loadMore(){
+function loadMore () {
   // billionaireContainer.innerHTML = '';
-  maxCart = maxCart+100;
-  addItemToIndex();
+  maxCart = maxCart + 100
+  addItemToIndex()
 }
 
-addItemToIndex();
 
+
+addItemToIndex()
